@@ -25,43 +25,62 @@ startButton.addEventListener('click', () => {
 
 //? PLAYER CHOICE
 
-//? Add event listener to all cells
+//? Wrap player in one function
 
-cells.forEach(cell => {cell.addEventListener('click', () => {
-  //? Fill cell with X
-  cell.textContent = 'X';
+const playerPick = () => {
 
-  //? Cell id
+  //? Add event listener to all cells
 
-  let cellId = cell.id;
-  console.log(cellId);
+  cells.forEach(cell => {cell.addEventListener('click', function player() {
 
-  //? Cell ID number only
+    if (cell.textContent === '') {
 
-  let cellIdNumOnly = cellId.slice(-1);
-  console.log('cell id number only is ' + cellIdNumOnly);
+    //? Fill cell with X
+    cell.textContent = 'X';
 
-  //? create index
+    //? Cell id
 
-  let cellIndex = cellArray.indexOf(parseInt(cellIdNumOnly));
-  console.log(cellIndex);
+    let cellId = cell.id;
+    // console.log(cellId);
 
-  //? Remove from array by using cellIndex only if index is found
+    //? Cell ID number only
 
-  if (cellIndex > -1) {
-    cellArray.splice(cellIndex, 1);
+    let cellIdNumOnly = cellId.slice(-1);
+    // console.log('cell id number only is ' + cellIdNumOnly);
 
-    console.log(cellArray);
+    //? create index
+
+    let cellIndex = cellArray.indexOf(parseInt(cellIdNumOnly));
+    // console.log(cellIndex);
+
+
+
+    //? Remove from array by using cellIndex only if index is found
+
+    if (cellIndex > -1) {
+      cellArray.splice(cellIndex, 1);
+
+      console.log('after player piced the array is ' + cellArray);
+    }
+
+
+
+
+
+    setTimeout(computerChoice(), 100);
+
+    
+    //? Return updated array :)
+    return cellArray;
+
+    // Check player pick NumRange and cellArray
+    // console.log('player choice is ' + cell.id.slice(-1))
+    // console.log('array: ' + cellArray);
   }
 
-
-  //? Return cell :)
+  })});
   return cellArray;
-
-  // Check player pick NumRange and cellArray
-  // console.log('player choice is ' + cell.id.slice(-1))
-  // console.log('array: ' + cellArray);
-})});
+}
 
 function printArray() {
   console.log(cellArray);
@@ -83,11 +102,17 @@ function computerChoice() {
 
 //! Generate random number between 1 and 9
 
-let computerPick = Math.floor((Math.random() * randomNumRange) + 1);
+console.log('before computer pick the array is ' + cellArray);
+
+let computerPick = Math.floor((Math.random() * 9) + 1);
 
 //! Concatante number from computerPick to cell in order to target cell element by Id
 
 let chosenCell = document.getElementById('cell' + computerPick.toString());
+
+
+if (chosenCell.textContent === '') {
+
 
 //! Fill the cell chosen by computer
 
@@ -101,13 +126,38 @@ chosenCell.textContent = 'comp'
 // singleCell.removeEventListener('click', playerChoice);
 // TODO /\ /\ /\ /\ /\ /\ /\ /\ /\
 
+let cellId = chosenCell.id;
+console.log('comp cell id is ' + cellId)
+
+let cellIdNumOnly = cellId.slice(-1);
+console.log('cell id from comp pick is ' + cellIdNumOnly);
+
+let cellIndex = cellArray.indexOf(parseInt(cellIdNumOnly));
+
+  //? Remove from array by using cellIndex only if index is found
+
+  if (cellIndex > -1) {
+    cellArray.splice(cellIndex, 1);
+
+    console.log('after player piced the array is ' + cellArray);
+  }
+
+return cellArray;
+
+} else if (cellArray.length > 0) {
+  computerChoice();
+}
+
+
+
+
 //! Decrease number range
 
 // randomNumRange -= 1;
 
 //! Remove chosen cell from cellArray
 
-cellArray.splice(computerPick - 1, 1);
+//TODO cellArray.splice(computerPick - 1, 1); wrong 
 
 }
 
@@ -118,7 +168,7 @@ cellArray.splice(computerPick - 1, 1);
 
 // console.log('computerPick is ' + computerPick);
 // console.log('number range is ' + numberRange());
-// console.log('array: ' + cellArray);
+
 
 
 // FUNCTIONS
