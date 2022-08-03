@@ -3,8 +3,10 @@ body {
 }
 
 .menu-container {
-  border-style: solid;
-  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(45deg, rgb(83, 138, 139), rgb(29, 50, 51));
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +26,7 @@ body {
 }
 
 body,
-.start-game,
-.buttons {
+.start-game {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,11 +40,38 @@ body,
 }
 
 .player-one,
-.player-two {
+.player-two,
+.choice {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+button,
+.cpu {
+  width: 50px;
+  height: 50px;
+}
+
+.brain,
+.begin {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+button {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgba(255, 255, 255, 0); */
+  border-style: none;
+  border-radius: 10px;
 }
 
 .start-btn {
@@ -52,8 +80,8 @@ body,
 
 .grid-container {
 
-  border-style: solid;
-  border-radius: 10px;
+  /* border-style: solid;
+  border-radius: 10px; */
   width: 300px;
   height: 300px;
 }
@@ -158,6 +186,10 @@ body,
   rgb(83, 138, 139, 0),
   rgb(37, 62, 63, 0),
   rgba(255, 255, 255, .1));
+}
+
+.red {
+  color: red;
 }
 
 
