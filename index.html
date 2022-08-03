@@ -11,25 +11,16 @@
       <div class="start-game">
         <h1>TicTacToe</h1>
         <div class="players">
-          <div class="player-one">
-            <h3>Player 1</h3>
+          <div class="choice">
+            <h3>Who goes first?</h3>
             <div class="buttons">
-              <h4>Brain or chip?</h4>
-              <button class="brain">brain</button>
-              <button class="chip">chip</button>
-            </div>
-          </div>
-          <div class="player-two">
-            <h3>Player 1</h3>
-            <div class="buttons">
-              <h4>Brain or chip?</h4>
-              <button class="brain">brain</button>
-              <button class="chip">chip</button>
+              <button class="brain" id="brain-x"><img class="brain" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yNCAwdjI0aC0yNHYtMjRoMjR6bS02LjExOCAxNi4wNjRjLTIuMjkzLS41MjktNC40MjctLjk5My0zLjM5NC0yLjk0NSAzLjE0Ni01Ljk0Mi44MzQtOS4xMTktMi40ODgtOS4xMTktMy4zODggMC01LjY0MyAzLjI5OS0yLjQ4OCA5LjExOSAxLjA2NCAxLjk2My0xLjE1IDIuNDI3LTMuMzk0IDIuOTQ1LTIuMDQ4LjQ3My0yLjEyNCAxLjQ5LTIuMTE4IDMuMjY5bC4wMDQuNjY3aDE1Ljk5M2wuMDAzLS42NDZjLjAwNy0xLjc5Mi0uMDYyLTIuODE1LTIuMTE4LTMuMjl6Ii8+PC9zdmc+"></button>
+              <button class="chip" id="chip-x"><img class="cpu" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTAgMmgtMnYtMmgydjJ6bS04IDEyaC0ydjJoMnYtMnptMC0zaC0ydjJoMnYtMnptMC0zaC0ydjJoMnYtMnptMC01YzAtLjU1MS40NDgtMSAxLTFoNHYtMmgtNGMtMS42NTcgMC0zIDEuMzQzLTMgM3Y0aDJ2LTR6bTExLTNoLTJ2Mmgydi0yem0zIDBoLTJ2Mmgydi0yem0tMy4zMyAxMS42MWMwLS4zMjYtLjIxNC0uMzk2LS41MzktLjM5NmgtLjQ2NXYuNzkzaC40NjVjLjMyNy0uMDAxLjUzOS0uMDcuNTM5LS4zOTd6bS04LjY3LTcuNjFoMTZ2MTZoLTE2di0xNnptMTAuMDQyIDguNTk2YzAgLjk0Ni41NDggMS40MDQgMS40ODcgMS40MDQuOTE1IDAgMS40OS0uNDU3IDEuNDktMS40MDR2LTIuMTI5aC0uOTA3djIuMTI5YzAgLjQ3OC0uMTYxLjYxNy0uNTgzLjYxNy0uNDQyIDAtLjU4My0uMjEtLjU4My0uNjE3di0yLjEyOWgtLjkwNHYyLjEyOXptLTMuMjgzIDEuMzMxaC45MDd2LTEuMTczaC42NjJjLjc4OCAwIDEuMjI1LS40NzQgMS4yMjUtMS4xNDQgMC0uNjgtLjQ0OC0xLjE0My0xLjIyNS0xLjE0M2gtMS41Njl2My40NnptLTMuNzM4LTEuNzE3YzAgMS4wMS42NDYgMS43OSAxLjcwMiAxLjc5LjgyNCAwIDEuNDQ3LS40NzggMS41NDEtMS41MjFoLS44ODFjLS4xNDcgMS4wOTctMS40NTUuOTYzLTEuNDU1LS4yNjggMC0uNTYyLjIyNy0xLjAyOS43OTUtMS4wMjkuMzA3IDAgLjU3Ni4xODYuNjMzLjU3M2guODgxYy0uMDktLjkyMi0uNzI5LTEuMzY1LTEuNTE0LTEuMzY1LTEuMDUtLjAwMS0xLjcwMi43ODYtMS43MDIgMS44MnptMTQuOTc5Ljc5aDJ2LTJoLTJ2MnptLTIwIDh2LTRoLTJ2NGMwIDEuNjU3IDEuMzQzIDMgMyAzaDR2LTJoLTRjLS41NTIgMC0xLS40NDktMS0xem0yMCAwYzAgLjU1MS0uNDQ4IDEtMSAxaC00djJoNGMxLjY1NyAwIDMtMS4zNDMgMy0zdi00aC0ydjR6bTAtNWgydi0yaC0ydjJ6bTAtNmgydi0yaC0ydjJ6bS0xLTEwaC00djJoNGMuNTUyIDAgMSAuNDQ5IDEgMXY0aDJ2LTRjMC0xLjY1Ny0xLjM0My0zLTMtM3ptLTEzIDI0aDJ2LTJoLTJ2MnptNiAwaDJ2LTJoLTJ2MnptLTMgMGgydi0yaC0ydjJ6Ii8+PC9zdmc+"></button>
             </div>
           </div>
         </div>
         <div class="start-btn">
-          <button class="start" id="start">START</button>
+          <button class="start" id="start"><img class="begin" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgMGgtMTRjLTIuNzYxIDAtNSAyLjIzOS01IDV2MTRjMCAyLjc2MSAyLjIzOSA1IDUgNWgxNGMyLjc2MiAwIDUtMi4yMzkgNS01di0xNGMwLTIuNzYxLTIuMjM4LTUtNS01em0tMiA1Yy41NTMgMCAxIC40NDggMSAxcy0uNDQ3IDEtMSAxLTEtLjQ0OC0xLTEgLjQ0Ny0xIDEtMXptLTIgMmMuNTUzIDAgMSAuNDQ4IDEgMXMtLjQ0NyAxLTEgMS0xLS40NDgtMS0xIC40NDctMSAxLTF6bS0xMSAydi0yaDJ2LTJoMnYyaDJ2MmgtMnYyaC0ydi0yaC0yem01IDEwYy0xLjEwNCAwLTItLjg5NS0yLTJzLjg5Ni0yIDItMiAyIC44OTUgMiAyLS44OTYgMi0yIDJ6bTYgMGMtMS4xMDQgMC0yLS44OTUtMi0ycy44OTYtMiAyLTIgMiAuODk1IDIgMi0uODk2IDItMiAyem0yLThjLS41NTMgMC0xLS40NDgtMS0xcy40NDctMSAxLTEgMSAuNDQ4IDEgMS0uNDQ3IDEtMSAxem0yLTJjLS41NTMgMC0xLS40NDgtMS0xcy40NDctMSAxLTEgMSAuNDQ4IDEgMS0uNDQ3IDEtMSAxeiIvPjwvc3ZnPg=="></button>
         </div>
       </div>
       
