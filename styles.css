@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
 body {
   height: 100vh;
 }
@@ -103,6 +105,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 0 0 5px;
 }
 
 .cell1 {
@@ -189,7 +195,7 @@ button {
 }
 
 .red {
-  color: red;
+  font-size: 2rem;
 }
 
 
