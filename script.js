@@ -1,5 +1,8 @@
 let cellArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let playerNums = [];
+let computerNums = [];
+let playerSymbol = 'O';
+let computerSymbol = 'O';
 
 const startButton = document.getElementById('start');
 
@@ -15,10 +18,12 @@ const btnBrainO = document.getElementById('brain-o');
 const btnChipO = document.getElementById('chip-o');
 
 btnBrainX.addEventListener('click', () => {
+  assignPlayerSymbol();
   playerPick();
 })
 
 btnChipX.addEventListener('click', () => {
+  assignComputerSymbol();
   computerChoice();
 })
 
@@ -36,7 +41,7 @@ const playerPick = () => {
   cells.forEach(cell => {cell.addEventListener('click', function player() {
 
     if (cell.textContent === '') {
-      cell.textContent = 'X';
+      cell.textContent = playerSymbol;
       let cellId = cell.id;
       let cellIdNumOnly = cellId.slice(-1);
       console.log(cellIdNumOnly);
@@ -49,7 +54,7 @@ const playerPick = () => {
         cellArray.splice(cellIndex, 1);
       }
       
-      setTimeout(computerChoice(), 1000);
+      setTimeout(computerChoice, 2000);
 
       return cellArray;
     }
@@ -66,9 +71,15 @@ function computerChoice() {
   let chosenCell = document.getElementById('cell' + computerPick.toString());
   
   if (chosenCell.textContent === '') {
-    chosenCell.textContent = 'comp'
+    chosenCell.textContent = computerSymbol;
     let cellId = chosenCell.id;
     let cellIdNumOnly = cellId.slice(-1);
+    computerNums.push(parseInt(cellIdNumOnly));
+
+
+
+    checkIfWin(computerNums, winningSequence);
+
     let cellIndex = cellArray.indexOf(parseInt(cellIdNumOnly));
     if (cellIndex > -1) {
       cellArray.splice(cellIndex, 1);
@@ -115,6 +126,20 @@ function winningStripe(stripe) {
   }
 }
 
+function assignPlayerSymbol() {
+  playerSymbol = 'X';
+  return playerSymbol;
+}
+
+function assignComputerSymbol() {
+  computerSymbol = 'X';
+  return computerSymbol;
+}
+
+
+//! NOTES
+//fix timeOut for computer
+//build assign symbol functions
 
 
   
