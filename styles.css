@@ -81,7 +81,7 @@ button {
 }
 
 .grid-container {
-
+  position: relative;
   /* border-style: solid;
   border-radius: 10px; */
   width: 300px;
@@ -198,5 +198,28 @@ button {
   font-size: 2rem;
 }
 
+.reload-button {
+  position: absolute;
+  left: 33.3333%;
+  top: 33.3333%;
+  width: 100px;
+  height: 100px;
+}
+
+#reload-btn {
+  width: 100px;
+  height: 100px;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(187, 94, 60);
+  color: white;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  text-shadow: 0 0 5px;
+}
 
 
