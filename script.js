@@ -17,6 +17,8 @@ const btnChipX = document.getElementById('chip-x');
 const btnBrainO = document.getElementById('brain-o');
 const btnChipO = document.getElementById('chip-o');
 
+const reloadBtn = document.getElementById('reload');
+
 btnBrainX.addEventListener('click', () => {
   assignPlayerSymbol();
   playerPick();
@@ -54,9 +56,11 @@ const playerPick = () => {
         cellArray.splice(cellIndex, 1);
       }
       
-      setTimeout(computerChoice, 2000);
+      if (gameFinished !== true) {
+        setTimeout(computerChoice, 500);
 
-      return cellArray;
+        return cellArray;
+      }
     }
 
   })});
@@ -106,6 +110,7 @@ function computerChoice() {
 
 let winningSequence = [[1, 2, 3], [4, 5, 6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];
 let result = true;
+let gameFinished = false;
 
 
 function checkIfWin(contender, sequence) {
@@ -114,6 +119,9 @@ function checkIfWin(contender, sequence) {
       return contender.includes(value)
     })) {
       winningStripe(miniArr);
+      gameFinished = true;
+      setTimeout(showReloadBtn, 1000);
+      return gameFinished;
     }
   }
 }
@@ -134,6 +142,11 @@ function assignPlayerSymbol() {
 function assignComputerSymbol() {
   computerSymbol = 'X';
   return computerSymbol;
+}
+
+function showReloadBtn() {
+  reloadBtn.classList.remove('hide');
+  cells.forEach(cell => cell.textContent = '');
 }
 
 
