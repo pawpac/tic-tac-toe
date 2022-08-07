@@ -3,40 +3,39 @@ let playerNums = [];
 let computerNums = [];
 let playerSymbol = 'O';
 let computerSymbol = 'O';
+let winningSequence = [[1, 2, 3], [4, 5, 6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];
+let result = true;
+let gameFinished = false;
 
 const startButton = document.getElementById('start');
-
 const menu = document.getElementById('menu');
 const grid = document.getElementById('grid');
-
-
 const cells = document.querySelectorAll('.cell');
-
 const btnBrainX = document.getElementById('brain-x');
 const btnChipX = document.getElementById('chip-x');
 const btnBrainO = document.getElementById('brain-o');
 const btnChipO = document.getElementById('chip-o');
-
 const reloadBtn = document.getElementById('reload');
+const reloadButton = document.getElementById('reload-btn')
 
 btnBrainX.addEventListener('click', () => {
   assignPlayerSymbol();
   playerPick();
-})
+});
 
 btnChipX.addEventListener('click', () => {
   assignComputerSymbol();
   computerChoice();
-})
+});
 
 startButton.addEventListener('click', () => {
   menu.classList.add('hide');
   grid.classList.remove('hide');
 });
 
-
-
-//? PLAYER CHOICE
+reloadButton.addEventListener('click', () => {
+  window.location.reload();
+})
 
 const playerPick = () => {
 
@@ -69,7 +68,7 @@ const playerPick = () => {
 
   return cellArray;
 }
-//! COMPUTER CHOICE
+
 function computerChoice() {
   let computerPick = Math.floor((Math.random() * 9) + 1);
   let chosenCell = document.getElementById('cell' + computerPick.toString());
@@ -79,39 +78,21 @@ function computerChoice() {
     let cellId = chosenCell.id;
     let cellIdNumOnly = cellId.slice(-1);
     computerNums.push(parseInt(cellIdNumOnly));
-
-
-
     checkIfWin(computerNums, winningSequence);
-
     let cellIndex = cellArray.indexOf(parseInt(cellIdNumOnly));
+    
     if (cellIndex > -1) {
       cellArray.splice(cellIndex, 1);
     }
-
+    
     playerPick();
-
+    
     return cellArray;
 
   } else if (cellArray.length > 0) {
     computerChoice();
   }
 }
-
-
-
-//! \/\/\/\/\/\/BRAINSTORM\/\/\/\/\/\/
-
-// const winnerSequenceArr = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];
-
-//! /\/\/\/\/\/\BRAINSTORM/\/\/\/\/\/\
-
-
-
-let winningSequence = [[1, 2, 3], [4, 5, 6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];
-let result = true;
-let gameFinished = false;
-
 
 function checkIfWin(contender, sequence) {
   for (let miniArr of sequence) {
@@ -148,11 +129,6 @@ function showReloadBtn() {
   reloadBtn.classList.remove('hide');
   cells.forEach(cell => cell.textContent = '');
 }
-
-
-//! NOTES
-//fix timeOut for computer
-//build assign symbol functions
 
 
   
